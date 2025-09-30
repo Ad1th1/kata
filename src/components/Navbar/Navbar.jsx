@@ -35,7 +35,9 @@ const Navbar = () => {
                         <li><a href="#courses">Courses</a></li>
                         <li><a href="#instructors">Instructors</a></li>
                         <li><a href="#media">Media</a></li>
+                        <li><a href="#accolades">Accolades</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>
+                        
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
