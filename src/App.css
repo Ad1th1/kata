@@ -5,444 +5,52 @@
 }
 
 body {
-  font-family: 'Rajdhani', 'Arial', sans-serif;
-  scroll-behavior: smooth;
-  background: #0a0a0a;
+  font-family: 'Arial', sans-serif;
+  background: #f8f9fa;
   color: #333;
   line-height: 1.6;
 }
 
-/* Indian Patriotic Colors */
-:root {
-  --saffron: #FF9933;
-  --white: #FFFFFF;
-  --green: #138808;
-  --navy-blue: #000080;
-  --gold: #FFD700;
-  --dark-saffron: #E68900;
-  --dark-green: #0A6E07;
-  --ring-red: #8B0000;
-  --ring-blue: #1E3A8A;
-}
-
-/* Patriotic Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: linear-gradient(90deg, var(--saffron) 0%, var(--white) 50%, var(--green) 100%);
-  padding: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  border-bottom: 3px solid var(--navy-blue);
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-  height: 80px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-weight: 800;
-  font-size: 1.8rem;
-  color: var(--navy-blue);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.logo-icon {
-  width: 50px;
-  height: 50px;
-  background: conic-gradient(
-    var(--saffron) 0deg 120deg,
-    var(--white) 120deg 240deg,
-    var(--green) 240deg 360deg
-  );
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: var(--navy-blue);
-  font-size: 1rem;
-  border: 3px solid var(--navy-blue);
-  box-shadow: 0 0 10px rgba(0,0,128,0.3);
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 0.5rem;
-  border-radius: 50px;
-  backdrop-filter: blur(10px);
-  border: 2px solid var(--navy-blue);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--navy-blue);
-  font-weight: 700;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
-}
-
-.nav-links a::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, var(--saffron), var(--green));
-  transition: left 0.3s ease;
-  z-index: -1;
-  border-radius: 25px;
-}
-
-.nav-links a:hover::before {
-  left: 0;
-}
-
-.nav-links a:hover {
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Boxing Ring Sections */
-section {
+.App {
   min-height: 100vh;
-  padding: 80px 20px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+}
+
+.main-content {
+  /* padding: 100px 2rem 2rem; */
+  /* max-width: 1200px; */
+  margin: 0 auto;
+}
+
+.main-content h1 {
+  font-size: 3rem;
+  color: #2c3e50;
+  /* margin-bottom: 1rem; */
   text-align: center;
-  position: relative;
-  overflow: hidden;
 }
 
-/* Boxing Ring Pattern */
-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    linear-gradient(90deg, transparent 24px, var(--ring-blue) 24px, var(--ring-blue) 26px, transparent 26px),
-    linear-gradient(0deg, transparent 24px, var(--ring-blue) 24px, var(--ring-blue) 26px, transparent 26px);
-  background-size: 50px 50px;
-  opacity: 0.1;
-  z-index: -1;
-}
-
-/* Hero Section - Boxing Ring */
-.hero-section {
-  background: linear-gradient(135deg, var(--saffron) 0%, var(--white) 50%, var(--green) 100%);
-  color: var(--navy-blue);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-}
-
-.welcome-title {
-  font-family: 'Impact', 'Arial Black', sans-serif;
-  font-size: 4.5rem;
-  font-weight: 900;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  background: linear-gradient(45deg, var(--saffron), var(--navy-blue), var(--green));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
-  animation: punch 2s ease-in-out infinite;
-}
-
-@keyframes punch {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
-.welcome-subtitle {
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-  font-weight: 600;
-  color: var(--navy-blue);
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
-}
-
-/* Boxing Glove Button */
-.cta-button {
-  background: linear-gradient(135deg, var(--saffron), var(--green));
-  color: white;
-  border: none;
-  padding: 1.2rem 3rem;
-  border-radius: 50px;
-  font-size: 1.3rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
-  overflow: hidden;
-  border: 3px solid var(--navy-blue);
-}
-
-.cta-button::before {
-  content: '🥊';
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.5rem;
-}
-
-.cta-button:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-  background: linear-gradient(135deg, var(--dark-saffron), var(--dark-green));
-}
-
-/* About Section - Training Gym */
-.about-section {
-  background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
-  color: white;
-}
-
-.about-section h2 {
-  color: var(--gold);
-  font-size: 3.5rem;
-  margin-bottom: 3rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.boxer-profiles {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin-top: 3rem;
-}
-
-.boxer-card {
-  background: linear-gradient(135deg, var(--saffron), var(--green));
-  padding: 2rem;
-  border-radius: 15px;
-  border: 3px solid var(--gold);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.boxer-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: linear-gradient(90deg, var(--saffron), var(--white), var(--green));
-}
-
-.boxer-card:hover {
-  transform: translateY(-10px) rotate(2deg);
-}
-
-.boxer-card h3 {
-  color: var(--navy-blue);
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-}
-
-.boxer-card p {
-  color: var(--navy-blue);
-  font-weight: 600;
-}
-
-/* Courses Section - Training Programs */
-.courses-section {
-  background: linear-gradient(135deg, var(--green) 0%, #1a3a1a 100%);
-  color: white;
-}
-
-.courses-section h2 {
-  color: var(--gold);
-  font-size: 3.5rem;
-  margin-bottom: 3rem;
-  text-transform: uppercase;
-}
-
-.training-programs {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin-top: 3rem;
-}
-
-.program-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 2rem;
-  border-radius: 15px;
-  border: 2px solid var(--saffron);
-  transition: all 0.3s ease;
-}
-
-.program-card:hover {
-  transform: scale(1.05);
-  border-color: var(--gold);
-  box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-}
-
-.program-card h4 {
-  color: var(--gold);
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-}
-
-/* Contact Section - Join the Fight */
-.contact-section {
-  background: linear-gradient(45deg, var(--saffron), #ff8c00);
-  color: var(--navy-blue);
-}
-
-.contact-section h2 {
-  font-size: 3.5rem;
-  margin-bottom: 3rem;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-}
-
-.contact-info {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 3rem;
-  border-radius: 20px;
-  border: 5px solid var(--navy-blue);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-  max-width: 600px;
-}
-
-.contact-item {
-  margin: 1.5rem 0;
+.main-content p {
   font-size: 1.2rem;
-  font-weight: 600;
+  color: #666;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
-.contact-item strong {
-  color: var(--green);
-}
-
-/* Championship Belts */
-.championship-belt {
-  width: 100%;
-  height: 40px;
-  background: linear-gradient(90deg, 
-    var(--saffron) 0%, 
-    var(--gold) 20%, 
-    var(--white) 40%, 
-    var(--green) 60%, 
-    var(--navy-blue) 80%, 
-    var(--saffron) 100%);
+.content-section {
+  background: white;
+  padding: 2rem;
   margin: 2rem 0;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  position: relative;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.championship-belt::before {
-  content: '🏆 CHAMPIONS';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--navy-blue);
-  font-weight: 900;
-  font-size: 1.2rem;
-  text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+.content-section h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    position: fixed;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    padding: 1rem;
-    border-radius: 0;
-    transform: translateY(-100%);
-    opacity: 0;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-links.active {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  
-  .welcome-title {
-    font-size: 2.5rem;
-  }
-  
-  .welcome-subtitle {
-    font-size: 1.3rem;
-  }
-  
-  .about-section h2,
-  .courses-section h2,
-  .contact-section h2 {
-    font-size: 2.5rem;
-  }
-  
-  .boxer-profiles,
-  .training-programs {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Punch Animation */
-@keyframes punchEffect {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-.punch {
-  animation: punchEffect 0.3s ease;
+.content-section p {
+  color: #666;
+  text-align: left;
+  margin-bottom: 0;
 }
